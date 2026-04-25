@@ -92,8 +92,8 @@ namespace FluentTaskScheduler
 
             RefreshButton.Content = L("Main.Toolbar.Refresh", "Refresh");
             ImportTaskButton.Content = L("Main.Toolbar.ImportTask", "Import Task");
-            ShortcutsButton.Content = L("Main.Toolbar.Shortcuts", "?");
-            ToolTipService.SetToolTip(ShortcutsButton, L("Main.Toolbar.Shortcuts.Tooltip", "Keyboard Shortcuts (F1)"));
+            ShortcutsButton.Content = L("Main.Toolbar.ShortcutsButton", "?");
+            ToolTipService.SetToolTip(ShortcutsButton, L("Main.Toolbar.ShortcutsTooltip", "Keyboard Shortcuts (F1)"));
             UpdateSortButtonText();
 
             CopyHistoryBtn.Content = L("Main.History.Copy", "📋 Copy");
@@ -1495,8 +1495,8 @@ namespace FluentTaskScheduler
         {
             string arrow = ViewModel.SortAscending ? "▲" : "▼";
             SortButton.Content = string.IsNullOrEmpty(ViewModel.SortColumn)
-                ? L("Main.Toolbar.Sort", "Sort ↕")
-                : string.Format(L("Main.Toolbar.Sort.ActiveFormat", "Sort {0} {1}"), arrow, ViewModel.SortColumn);
+                ? L("Main.Toolbar.SortButton", "Sort ↕")
+                : string.Format(L("Main.Toolbar.SortActiveFormat", "Sort {0} {1}"), arrow, ViewModel.SortColumn);
         }
 
         private async void ReloadFolders_Click(object sender, RoutedEventArgs e)

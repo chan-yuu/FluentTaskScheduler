@@ -160,10 +160,10 @@
   <data name="Main.Header.ScriptLibrary" xml:space="preserve"><value>脚本库</value></data>
   <data name="Main.Toolbar.ImportTask" xml:space="preserve"><value>导入任务</value></data>
   <data name="Main.Toolbar.Refresh" xml:space="preserve"><value>刷新</value></data>
-  <data name="Main.Toolbar.Shortcuts" xml:space="preserve"><value>?</value></data>
-  <data name="Main.Toolbar.Shortcuts.Tooltip" xml:space="preserve"><value>快捷键（F1）</value></data>
-  <data name="Main.Toolbar.Sort" xml:space="preserve"><value>排序 ↕</value></data>
-  <data name="Main.Toolbar.Sort.ActiveFormat" xml:space="preserve"><value>排序 {0} {1}</value></data>
+  <data name="Main.Toolbar.ShortcutsButton" xml:space="preserve"><value>?</value></data>
+  <data name="Main.Toolbar.ShortcutsTooltip" xml:space="preserve"><value>快捷键（F1）</value></data>
+  <data name="Main.Toolbar.SortButton" xml:space="preserve"><value>排序 ↕</value></data>
+  <data name="Main.Toolbar.SortActiveFormat" xml:space="preserve"><value>排序 {0} {1}</value></data>
   <data name="Main.Sort.Name" xml:space="preserve"><value>名称</value></data>
   <data name="Main.Sort.Status" xml:space="preserve"><value>状态</value></data>
   <data name="Main.Sort.NextRun" xml:space="preserve"><value>下次运行</value></data>

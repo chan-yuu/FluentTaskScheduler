@@ -158,10 +158,10 @@ Restart now to apply the update?</value></data>
   <data name="Main.Header.ScriptLibrary" xml:space="preserve"><value>Script Library</value></data>
   <data name="Main.Toolbar.ImportTask" xml:space="preserve"><value>Import Task</value></data>
   <data name="Main.Toolbar.Refresh" xml:space="preserve"><value>Refresh</value></data>
-  <data name="Main.Toolbar.Shortcuts" xml:space="preserve"><value>?</value></data>
-  <data name="Main.Toolbar.Shortcuts.Tooltip" xml:space="preserve"><value>Keyboard Shortcuts (F1)</value></data>
-  <data name="Main.Toolbar.Sort" xml:space="preserve"><value>Sort ↕</value></data>
-  <data name="Main.Toolbar.Sort.ActiveFormat" xml:space="preserve"><value>Sort {0} {1}</value></data>
+  <data name="Main.Toolbar.ShortcutsButton" xml:space="preserve"><value>?</value></data>
+  <data name="Main.Toolbar.ShortcutsTooltip" xml:space="preserve"><value>Keyboard Shortcuts (F1)</value></data>
+  <data name="Main.Toolbar.SortButton" xml:space="preserve"><value>Sort ↕</value></data>
+  <data name="Main.Toolbar.SortActiveFormat" xml:space="preserve"><value>Sort {0} {1}</value></data>
   <data name="Main.Sort.Name" xml:space="preserve"><value>Name</value></data>
   <data name="Main.Sort.Status" xml:space="preserve"><value>Status</value></data>
   <data name="Main.Sort.NextRun" xml:space="preserve"><value>Next Run</value></data>
