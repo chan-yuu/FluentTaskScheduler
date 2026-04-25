@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Windows.ApplicationModel.Resources;
+using Windows.ApplicationModel.Resources.Core;
 
 namespace FluentTaskScheduler.Services
 {
@@ -42,6 +43,22 @@ namespace FluentTaskScheduler.Services
                 return fallback;
             }
 
+            string? localized = ResolveString(key);
+            if (!string.IsNullOrWhiteSpace(localized))
+            {
+                return localized;
+            }
+
+            string slashKey = key.Replace('.', '/');
+            if (!string.Equals(slashKey, key, StringComparison.Ordinal))
+            {
+                localized = ResolveString(slashKey);
+                if (!string.IsNullOrWhiteSpace(localized))
+                {
+                    return localized;
+                }
+            }
+
             try
             {
                 string value = ResourceLoader.GetForViewIndependentUse().GetString(key);
@@ -58,6 +75,39 @@ namespace FluentTaskScheduler.Services
             return string.IsNullOrEmpty(fallback) ? key : fallback;
         }
 
+        private static string? ResolveString(string key)
+        {
+            try
+            {
+                var context = ResourceContext.GetForViewIndependentUse();
+                context.Languages = new[] { _currentLanguage };
+
+                ResourceMap rootMap = ResourceManager.Current.MainResourceMap;
+                ResourceMap? resourceMap = null;
+                try
+                {
+                    resourceMap = rootMap.GetSubtree("Resources");
+                }
+                catch
+                {
+                    resourceMap = rootMap;
+                }
+
+                var candidate = resourceMap.GetValue(key, context);
+                string? value = candidate?.ValueAsString;
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    return value;
+                }
+            }
+            catch
+            {
+                // Ignore and let fallback pipeline continue.
+            }
+
+            return null;
+        }
+
         private static void ApplyLanguage(string language, bool raiseEvent)
         {
             _currentLanguage = language;
@@ -66,6 +116,7 @@ namespace FluentTaskScheduler.Services
             try
             {
                 Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = language;
+                ResourceContext.SetGlobalQualifierValue("Language", language);
             }
             catch
             {
